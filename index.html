@@ -12,36 +12,7 @@
 </head>
 <body>
 <div id="app">
-    <div class="product">
-
-        <div class="product-image">
-            <img :alt="altText" :src="image"/>
-        </div>
-
-        <div class="product-info">
-            <h1>{{ product }}</h1>
-            <div class="cart">
-                <p>Cart({{ cart }})</p>
-            </div>
-            <b><i><p v-if="inStock">In stock / <del>Out of stock</del></p></i></b>
-            <b><i><p v-else><del>In stock </del>/ Out of stock</p></i></b>
-            <ul>
-                <li v-for="detail in details">{{ detail }}</li>
-            </ul>
-            <div v-for="variant in variants" :key="variant.variantId">
-                <p class="colorSocks" @mouseover="updateProduct(variants.variantImage)">{{ variant.variantColor }}</p>
-            </div>
-            <div class="divSizes">
-                <p class="sizeConf" v-for="size in sizes">{{ size }}</p>
-            </div>
-            <div class="contWithButton">
-                <button @click="addToCart">Add to cart</button>
-                <button @click="decToCart">Decrement to cart</button>
-            </div>
-        </div>
-
-    </div>
-
+    <product :premium="premium"></product>
 </div>
 </body>
 </html>
